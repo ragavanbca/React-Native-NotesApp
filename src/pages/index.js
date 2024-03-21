@@ -26,7 +26,7 @@ export default function App() {
 
     useEffect(() => {
         // Create the 'items' table if it doesn't exist
-        // createTable();
+        createTable();
 
         // Retrieve all items from the database
         fetchAllTodoList();

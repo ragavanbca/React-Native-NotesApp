@@ -50,31 +50,31 @@ const getAllItems = (callback) => {
 };
 
 const recreateTable = () => {
-    db.transaction(tx => {
-        tx.executeSql(
-            'DROP TABLE IF EXISTS items;',
-            [],
-            () => {
-                // Table dropped successfully (or didn't exist)
-                tx.executeSql(
-                    'CREATE TABLE IF NOT EXISTS todo_list (id INTEGER PRIMARY KEY AUTOINCREMENT, heading TEXT, message TEXT);',
-                    [],
-                    () => {
-                        // Table created successfully
-                        console.log('Table recreated successfully');
-                    },
-                    (_, error) => {
-                        // Error creating the table
-                        console.error('Error creating table:', error);
-                    }
-                );
-            },
-            (_, error) => {
-                // Error dropping the table
-                console.error('Error dropping table:', error);
-            }
-        );
-    });
+    // db.transaction(tx => {
+    //     tx.executeSql(
+    //         'DROP TABLE IF EXISTS items;',
+    //         [],
+    //         () => {
+    //             // Table dropped successfully (or didn't exist)
+    //             tx.executeSql(
+    //                 'CREATE TABLE IF NOT EXISTS todo_list (id INTEGER PRIMARY KEY AUTOINCREMENT, heading TEXT, message TEXT);',
+    //                 [],
+    //                 () => {
+    //                     // Table created successfully
+    //                     console.log('Table recreated successfully');
+    //                 },
+    //                 (_, error) => {
+    //                     // Error creating the table
+    //                     console.error('Error creating table:', error);
+    //                 }
+    //             );
+    //         },
+    //         (_, error) => {
+    //             // Error dropping the table
+    //             console.error('Error dropping table:', error);
+    //         }
+    //     );
+    // });
 };
 
 
